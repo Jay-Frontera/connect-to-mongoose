@@ -9,7 +9,6 @@ export default async function connectToMongoose(uri) {
         set("strictQuery", true);
         try {
             const mongoose = await connect(uri || process.env.MONGO_URI, {
-                keepAlive: true,
                 autoIndex: false
             });
             console.log(`[!] Connected to mongoose!`)
